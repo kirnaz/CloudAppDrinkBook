@@ -178,6 +178,36 @@
         "imageUri": "",
         "uuEccReady": false,
         "template": "<UunBcaa21sft04.Bricks.Book1 />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.Book2",
+        "name": "Book2",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "Book2"
+        ],
+        "docCode": "UunBcaa21sft04BricksBook2",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.Book2 />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.Neco",
+        "name": "Neco",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "Neco"
+        ],
+        "docCode": "UunBcaa21sft04BricksNeco",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.Neco />"
       }
     ]
   },
