@@ -12,6 +12,159 @@
       "appDeploymentUri": null
     }
   },
-  "uun_bcaa21sft04_maing01-hi": {},
+  "uun_bcaa21sft04_maing01-hi": {
+    "componentList": [
+      {
+        "code": "UunBcaa21sft04.Bricks.HomePage",
+        "name": "HomePage",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "HomePage"
+        ],
+        "docCode": "UunBcaa21sft04BricksHomePage",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.HomePage />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.ViewRecipe",
+        "name": "ViewRecipe",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "ViewRecipe"
+        ],
+        "docCode": "UunBcaa21sft04BricksViewRecipe",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.ViewRecipe />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.FindeRecipe",
+        "name": "FindeRecipe",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "FindeRecipe"
+        ],
+        "docCode": "UunBcaa21sft04BricksFindeRecipe",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.FindeRecipe />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.AddRecipe",
+        "name": "AddRecipe",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "AddRecipe"
+        ],
+        "docCode": "UunBcaa21sft04BricksAddRecipe",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.AddRecipe />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.EditRecipe",
+        "name": "EditRecipe",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "EditRecipe"
+        ],
+        "docCode": "UunBcaa21sft04BricksEditRecipe",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.EditRecipe />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.ReadRecipes",
+        "name": "ReadRecipes",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "ReadRecipes"
+        ],
+        "docCode": "UunBcaa21sft04BricksReadRecipes",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.ReadRecipes />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.ReadIgnredients",
+        "name": "ReadIgnredients",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "ReadIgnredients"
+        ],
+        "docCode": "UunBcaa21sft04BricksReadIgnredients",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.ReadIgnredients />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.ReadConfig",
+        "name": "ReadConfig",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "ReadConfig"
+        ],
+        "docCode": "UunBcaa21sft04BricksReadConfig",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.ReadConfig />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.SaveRecipe",
+        "name": "SaveRecipe",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "SaveRecipe"
+        ],
+        "docCode": "UunBcaa21sft04BricksSaveRecipe",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.SaveRecipe />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.About",
+        "name": "About",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "About"
+        ],
+        "docCode": "UunBcaa21sft04BricksAbout",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.About />"
+      }
+    ]
+  },
   "uun_bcaa21sft04_maing01-server": {}
 }
