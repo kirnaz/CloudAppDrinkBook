@@ -163,6 +163,21 @@
         "imageUri": "",
         "uuEccReady": false,
         "template": "<UunBcaa21sft04.Bricks.About />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.Book1",
+        "name": "Book1",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "Book1"
+        ],
+        "docCode": "UunBcaa21sft04BricksBook1",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.Book1 />"
       }
     ]
   },
