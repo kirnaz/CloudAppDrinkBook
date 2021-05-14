@@ -1,7 +1,7 @@
 const Lsi = {
   appName: {
-    cs: "Aplikace uunBcaa21sft04",
-    en: "Application uunBcaa21sft04",
+    cs: "Aplikace uuDrinkbook",
+    en: "Application uuDrinkbook",
   },
 
   left: {
@@ -17,8 +17,8 @@ const Lsi = {
 
   about: {
     header: {
-      cs: "O aplikaci uunBcaa21sft04",
-      en: "About application uunBcaa21sft04",
+      cs: "O aplikaci uuDrinkbook",
+      en: "About application uuDrinkbook",
     },
     creatorsHeader: {
       cs: "Tvůrci aplikace",
