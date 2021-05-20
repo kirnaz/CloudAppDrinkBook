@@ -29,6 +29,7 @@ export const AddRecipe = createVisualComponent({
       })
     ).isRequired,
     recipeCreate:UU5.PropTypes.func.isRequired,
+    ingredientSave:UU5.PropTypes.func.isRequired
   },
   //@@viewOff:propTypes
 
@@ -36,11 +37,12 @@ export const AddRecipe = createVisualComponent({
   defaultProps: {
     ingredients:null,
     categoryList:null,
-    recipeCreate:()=>{}
+    recipeCreate:()=>{},
+    ingredientSave:()=>{}
   },
   //@@viewOff:defaultProps
 
-  render({ingredients,categoryList,recipeCreate}) {
+  render({ingredients,categoryList,recipeCreate,ingredientSave}) {
     //@@viewOn:private
     //@@viewOff:private
 
@@ -54,6 +56,12 @@ export const AddRecipe = createVisualComponent({
 
     if(!recipe || !ingredinets || !categoryList) return null;
     
+    function saveRecipe(opt){
+      //TODO projde ingredience, každou novou uloží
+
+      recipeCreate(opt.values);
+    }
+
     return(
       <div>
         <UU5.Bricks.Header>
@@ -62,11 +70,11 @@ export const AddRecipe = createVisualComponent({
         
 
         <UU5.Forms.Form>
-          <UU5.Forms.Text >name</UU5.Forms.Text>
-          <UU5.Forms.Number >timeForPreparation</UU5.Forms.Number>
-          <UU5.Forms.Number >numberOfPortions</UU5.Forms.Number>
-          <UU5.Forms.SwitchSelector>category</UU5.Forms.SwitchSelector>
-          <UU5.Bricks.Table>ingredients
+          <UU5.Forms.Text name="recipeName">name</UU5.Forms.Text>
+          <UU5.Forms.Number name="timeForPreparation">timeForPreparation</UU5.Forms.Number>
+          <UU5.Forms.Number name="numberOfPortions">numberOfPortions</UU5.Forms.Number>
+          <UU5.Forms.SwitchSelector items={categoryList.map(category=>({category}))} name="category">category</UU5.Forms.SwitchSelector>
+          <UU5.Bricks.Table name="listOfIngredients">ingredients
             <UU5.Bricks.container>
               <label>ingredient</label>
               <input type='text' name="ingredient" value={ingredient.id} list='listid'/>
@@ -82,7 +90,7 @@ export const AddRecipe = createVisualComponent({
             <UU5.Forms.Text>name</UU5.Forms.Text>
           </UU5.Bricks.Table>
 
-          <UU5.Bricks.Button onClick={recipeCreate}>Send</UU5.Bricks.Button>
+          <UU5.Bricks.Button onClick={saveRecipe}>Send</UU5.Bricks.Button>
         </UU5.Forms.Form>
       </div>
     )

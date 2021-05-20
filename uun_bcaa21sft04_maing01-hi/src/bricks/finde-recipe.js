@@ -58,7 +58,7 @@ export const FindeRecipe = createVisualComponent({
       <div>
         <UU5.Forms.Form>
           <UU5.Bricks.Text></UU5.Bricks.Text>
-          <UU5.Forms.SwitchSelector>category</UU5.Forms.SwitchSelector>
+          <UU5.Forms.SwitchSelector items={categoryList.map(category=>({category}))}>category</UU5.Forms.SwitchSelector>
           <UU5.Forms.Number>timeForPreparation</UU5.Forms.Number>
           <UU5.Bricks.Table>ingredients
             <UU5.Bricks.container>

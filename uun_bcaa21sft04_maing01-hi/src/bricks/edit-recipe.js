@@ -21,6 +21,7 @@ export const EditRecipe = createVisualComponent({
       recipeName:UU5.PropTypes.string.isRequired,
       numberOfPortions:UU5.PropTypes.number.isRequired,
       timeForPreparation:UU5.PropTypes.number.isRequired,
+      category:UU5.PropTypes.number.isRequired,
       listOfIngredients:UU5.PropTypes.arrayOf(
         UU5.PropTypes.shape({
           ingredientID:UU5.PropTypes.string.isRequired,
@@ -28,7 +29,6 @@ export const EditRecipe = createVisualComponent({
         }).isRequired
       ).isRequired,
       steps:UU5.PropTypes.string.isRequired
-
     }).isRequired,
     ingredients:UU5.PropTypes.arrayOf(
       UU5.PropTypes.shape({
@@ -43,7 +43,8 @@ export const EditRecipe = createVisualComponent({
       })
     ).isRequired,
     recipeEdit:UU5.PropTypes.func.isRequired,
-    recipeDelete:UU5.PropTypes.func.isRequired
+    recipeDelete:UU5.PropTypes.func.isRequired,
+    ingredientSave:UU5.PropTypes.func.isRequired
   },
   //@@viewOff:propTypes
 
@@ -53,11 +54,12 @@ export const EditRecipe = createVisualComponent({
     ingredients:null,
     categoryList:null,
     recipeEdit:()=>{},
-    recipeDelete:()=>{}
+    recipeDelete:()=>{},
+    ingredientSave:()=>{}
   },
   //@@viewOff:defaultProps
 
-  render({recipe,ingredients,categoryList,recipeEdit,recipeDelete}) {
+  render({recipe,ingredients,categoryList,recipeEdit,recipeDelete,ingredientSave}) {
     //@@viewOn:private
     //@@viewOff:private
 
@@ -68,6 +70,12 @@ export const EditRecipe = createVisualComponent({
     const className = Config.Css.css``;
     const attrs = UU5.Common.VisualComponent.getAttrs(props, className);
     const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
+
+    function editRecipe(opt){
+      //TODO projde všechny ingredience a nové vytvoří
+
+      recipeEdit(opt.values);
+    }
 
     if(!recipe || !ingredinets || !categoryList) return null;
     
@@ -80,11 +88,11 @@ export const EditRecipe = createVisualComponent({
         <UU5.Bricks.Button onClick={recipeEdit}>Save</UU5.Bricks.Button>
 
         <UU5.Forms.Form>
-          <UU5.Forms.Text value={recipe.name}>name</UU5.Forms.Text>
-          <UU5.Forms.Number value={recipe.timeForPreparation}>timeForPreparation</UU5.Forms.Number>
-          <UU5.Forms.Number value={recipe.numberOfPortions}>numberOfPortions</UU5.Forms.Number>
-          <UU5.Forms.SwitchSelector>category</UU5.Forms.SwitchSelector>
-          <UU5.Bricks.Table>ingredients
+          <UU5.Forms.Text name="recipeName" value={recipe.name}>name</UU5.Forms.Text>
+          <UU5.Forms.Number name="timeForPreparation" value={recipe.timeForPreparation}>timeForPreparation</UU5.Forms.Number>
+          <UU5.Forms.Number name="numberOfPortions" value={recipe.numberOfPortions}>numberOfPortions</UU5.Forms.Number>
+          <UU5.Forms.SwitchSelector name="category" items={categoryList.map(category=>({category}))}>category</UU5.Forms.SwitchSelector>
+          <UU5.Bricks.Table name="listOfIngredients">ingredients
             {recipe.listOfIngredients.map((ingredient)=>{
             <UU5.Bricks.container>
               <label>ingredient</label>
