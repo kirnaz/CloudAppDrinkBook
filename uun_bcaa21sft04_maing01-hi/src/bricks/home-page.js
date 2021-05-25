@@ -4,8 +4,6 @@ import UU5 from "uu5g04";
 import "uu5g04-bricks";
 import {createVisualComponent, useDataList, useState} from "uu5g04-hooks";
 import Uu5Tiles from "uu5tilesg02";
-import BookUpdateForm from "bookUpdateForm";
-import BookImageForm from "bookImageForm";
 import Calls from "calls";
 import Config from "./config/config";
 import config from "../config/config";
