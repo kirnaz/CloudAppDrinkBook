@@ -1,0 +1,53 @@
+//@@viewOn:imports
+import UU5 from "uu5g04";
+import { createVisualComponent, useState, useEffect } from "uu5g04-hooks";
+import Config from "./config/config";
+import ViewRecipe from "./view-recipe"
+//@@viewOff:imports
+
+const STATICS = {
+  //@@viewOn:statics
+  displayName: Config.TAG + "ViewRecipe",
+  nestingLevel: "bigBoxCollection",
+  //@@viewOff:statics
+};
+
+export const ViewRecipePage = createVisualComponent({
+  ...STATICS,
+
+  //@@viewOn:propTypes
+  propTypes: {},
+  //@@viewOff:propTypes
+
+  //@@viewOn:defaultProps
+  defaultProps: {},
+  //@@viewOff:defaultProps
+
+  render(props) {
+    const [recipe, setRecipe] = useState({ loading: false, loaded: false });
+    useEffect(() => {
+      const fetchData = async () => {
+        if (!recipe.loaded && !recipe.loading) {
+          setRecipe({ loading: true, loaded: false })
+
+          const response = await fetch("http://localhost:3001/api/recipe/1")
+          const data = await response.json()
+
+          setRecipe({ loading: false, loaded: true, data: data });
+
+        }
+      }
+      fetchData();
+    })
+
+    if (recipe.loading || !recipe.loaded) {
+      return <UU5.Bricks.Loading />
+    }
+
+    return (
+      <ViewRecipe recipe={recipe.data} />
+    )
+  },
+});
+
+export default ViewRecipePage;

@@ -18,7 +18,7 @@ const STATICS = {
 };
 
 const About = UU5.Common.Component.lazy(() => import("../bricks/about"));
-const ViewRecipe = UU5.Common.Component.lazy(() => import("../bricks/view-recipe"));
+const ViewRecipePage = UU5.Common.Component.lazy(() => import("../bricks/view-recipe-page"));
 const InitAppWorkspace = UU5.Common.Component.lazy(() => import("../routes/init-app-workspace"));
 const ControlPanel = UU5.Common.Component.lazy(() => import("../routes/control-panel"));
 
@@ -27,7 +27,7 @@ const ROUTES = {
   "": DEFAULT_USE_CASE,
   home: { component: <Home /> },
   about: { component: <About /> },
-  "view-recipe": { component: <ViewRecipe /> },
+  "view-recipe": { component: <ViewRecipePage /> },
   "sys/uuAppWorkspace/initUve": { component: <InitAppWorkspace /> },
   controlPanel: { component: <ControlPanel /> },
 };

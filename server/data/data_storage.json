@@ -1,0 +1,23 @@
+{
+    "recipes" : [
+        {
+        "recipeID": 1,
+        "recipeName": "test",
+        "numberOfPortions": 5,
+        "timeForPreparation" : 20,
+        "category": 1,
+        "listOfIngredients": [
+                {
+                "ingredientName": "rum",
+                "ingredientAmount": 100,
+                "ingredientMeasure": "cl"
+                }
+            ],
+        "steps": [
+                "vodka",
+                "tomato"
+            ] 
+        }
+    ],
+    "ingredients" : []
+}
