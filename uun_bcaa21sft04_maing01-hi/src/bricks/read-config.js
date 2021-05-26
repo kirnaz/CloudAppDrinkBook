@@ -10,6 +10,22 @@ const STATICS = {
   //@@viewOff:statics
 };
 
+//výchozí testovací pole kategorií, v provozu bude načítáno ze serveru
+const categoryList=[
+  {
+    id:0,
+    name:"Alcoholic"
+  },
+  {
+    id:1,
+    name:"Non-alcoholic"
+  },
+  {
+    id:2,
+    name:"Coffe"
+  },
+]
+
 export const ReadConfig = createComponent({
   ...STATICS,
 
@@ -21,7 +37,7 @@ export const ReadConfig = createComponent({
   defaultProps: {},
   //@@viewOff:defaultProps
 
-  render(props) {
+  render({children}) {
     //@@viewOn:private
     //@@viewOff:private
 
@@ -29,7 +45,8 @@ export const ReadConfig = createComponent({
     //@@viewOff:interface
 
     //@@viewOn:render
-    const className = Config.Css.css``;
+    return children({categoryList})
+    /*const className = Config.Css.css``;
     const attrs = UU5.Common.VisualComponent.getAttrs(props, className);
     const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
 
@@ -38,7 +55,7 @@ export const ReadConfig = createComponent({
         <div>Component {STATICS.displayName}</div>
         {UU5.Utils.Content.getChildren(props.children, props, STATICS)}
       </div>
-    ) : null;
+    ) : null;*/
     //@@viewOff:render
   },
 });
