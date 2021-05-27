@@ -30,10 +30,16 @@ export const ViewRecipePage = createVisualComponent({
         if (!recipe.loaded && !recipe.loading) {
           setRecipe({ loading: true, loaded: false })
 
-          const response = await fetch("http://localhost:3001/api/recipe/1")
+          const response = await fetch("http://localhost:3001/api/recipe/2cb62b3c43b")
           const data = await response.json()
 
-          setRecipe({ loading: false, loaded: true, data: data });
+          if(data.error){
+            alert(data.error)
+          }else{
+            
+            setRecipe({ loading: false, loaded: true, data: data.value});
+          }
+
 
         }
       }
