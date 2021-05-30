@@ -97,7 +97,6 @@ export const About = createVisualComponent({
     return (
       <UU5.Bricks.Section {...attrs}>
         <Plus4U5.App.ArtifactSetter territoryBaseUri="" artifactId="" />
-
         <Plus4U5.App.About header={header} content={about} />
         <Plus4U5.App.Licence organisation={organisation} authorities={authorities} />
         <Plus4U5.App.Authors header={creatorsHeader} leadingAuthors={leadingAuthors} />

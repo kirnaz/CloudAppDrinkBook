@@ -1,23 +1,37 @@
 {
-    "recipes" : [
+  "recipes": [
+    {
+      "recipeName": "Gin & Tonic",
+      "numberOfPortions": 1,
+      "timeForPreparation": 5,
+      "category": 1,
+      "listOfIngredients": [
         {
-        "recipeID": 1,
-        "recipeName": "test",
-        "numberOfPortions": 5,
-        "timeForPreparation" : 20,
-        "category": 1,
-        "listOfIngredients": [
-                {
-                "ingredientName": "rum",
-                "ingredientAmount": 100,
-                "ingredientMeasure": "cl"
-                }
-            ],
-        "steps": [
-                "vodka",
-                "tomato"
-            ] 
+          "ingredientName": "Gin",
+          "ingredientAmount": 70,
+          "ingredientMeasure": "ml"
+        },
+        {
+          "ingredientName": "Tonic water",
+          "ingredientAmount": 50,
+          "ingredientMeasure": "ml"
         }
-    ],
-    "ingredients" : []
+      ],
+      "steps": [
+        "In a glass filled with ice cubes, add gin and tonic.",
+        "Put a straw into the glass."
+      ],
+      "recipeID": "2cb62b3c43b"
+    }
+  ],
+  "ingredients": [
+    {
+      "ingredientName": "Gin",
+      "ingredientID": "404e9c1e274"
+    },
+    {
+      "ingredientName": "Tonic water",
+      "ingredientID": "dc31b891717"
+    }
+  ]
 }

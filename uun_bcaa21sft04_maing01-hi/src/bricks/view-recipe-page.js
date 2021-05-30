@@ -24,20 +24,25 @@ export const ViewRecipePage = createVisualComponent({
   //@@viewOff:defaultProps
 
   render(props) {
+    if (props.params.id == null) {
+      alert('Invalid url');
+      return;
+    }
+
     const [recipe, setRecipe] = useState({ loading: false, loaded: false });
     useEffect(() => {
       const fetchData = async () => {
         if (!recipe.loaded && !recipe.loading) {
           setRecipe({ loading: true, loaded: false })
 
-          const response = await fetch("http://localhost:3001/api/recipe/2cb62b3c43b")
+          const response = await fetch(`http://localhost:3001/api/recipe/${props.params.id}`)
           const data = await response.json()
 
-          if(data.error){
+          if (data.error) {
             alert(data.error)
-          }else{
-            
-            setRecipe({ loading: false, loaded: true, data: data.value});
+          } else {
+
+            setRecipe({ loading: false, loaded: true, data: data.value });
           }
 
 
