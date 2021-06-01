@@ -27,9 +27,11 @@ const ROUTES = {
   "": DEFAULT_USE_CASE,
   home: { component: <Home /> },
   about: { component: <About /> },
-  "view-recipe": { component: <ViewRecipePage /> },
+  selectedRecipe: { component: <selectedRecipe /> },
+  aboutRecipe: { component: <aboutRecipe /> },
+  "view-recipe": { component: <ViewRecipe /> },
   "sys/uuAppWorkspace/initUve": { component: <InitAppWorkspace /> },
-  controlPanel: { component: <ControlPanel /> },
+  controlPanel: { component: <ControlPanel /> }
 };
 
 export const SpaAuthenticated = createVisualComponent({

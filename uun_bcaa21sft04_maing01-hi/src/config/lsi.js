@@ -9,10 +9,18 @@ const Lsi = {
       cs: "Vítejte",
       en: "Welcome",
     },
+    aboutRecipe: {
+      cs: "O receptu",
+      en: "About Recipe",
+    },
+    selectedRecipe: {
+      cs: "Recepty",
+      en: "Recipe",
+    },
     about: {
       cs: "O aplikaci",
       en: "About Application",
-    },
+    }
   },
 
   about: {
