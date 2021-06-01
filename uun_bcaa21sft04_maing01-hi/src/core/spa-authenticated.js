@@ -9,6 +9,8 @@ import Config from "./config/config";
 import Left from "./left";
 import Bottom from "./bottom";
 import Home from "../routes/home";
+import SelectedRecipe from "../routes/selectedRecipe"
+import AboutRecipe from "../routes/aboutRecipe"
 //@@viewOff:imports
 
 const STATICS = {
@@ -27,9 +29,9 @@ const ROUTES = {
   "": DEFAULT_USE_CASE,
   home: { component: <Home /> },
   about: { component: <About /> },
-  selectedRecipe: { component: <selectedRecipe /> },
-  aboutRecipe: { component: <aboutRecipe /> },
-  "view-recipe": { component: <ViewRecipePage /> },
+  selectedRecipe: { component: <SelectedRecipe /> },
+  aboutRecipe: { component: <AboutRecipe /> },
+  //"view-recipe": { component: <ViewRecipe /> },
   "sys/uuAppWorkspace/initUve": { component: <InitAppWorkspace /> },
   controlPanel: { component: <ControlPanel /> }
 };

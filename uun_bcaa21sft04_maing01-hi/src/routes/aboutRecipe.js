@@ -12,7 +12,7 @@ const STATICS = {
     //@@viewOff:statics
   };
 
-export const aboutRecipe = createVisualComponent({
+export const AboutRecipe = createVisualComponent({
   //@@viewOn:statics
   displayName: Config.TAG + "aboutRecipe",
   //@@viewOff:statics
@@ -24,4 +24,4 @@ export const aboutRecipe = createVisualComponent({
   },
 });
 
-export default AboutRecipe;
+export default AboutRecipe; 
