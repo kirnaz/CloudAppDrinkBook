@@ -22,6 +22,35 @@
         "Put a straw into the glass."
       ],
       "recipeID": "2cb62b3c43b"
+    },
+    {
+      "recipeName": "Cuba Libre",
+      "numberOfPortions": 1,
+      "timeForPreparation": 5,
+      "category": 1,
+      "listOfIngredients": [
+        {
+          "ingredientName": "Rum",
+          "ingredientAmount": 50,
+          "ingredientMeasure": "ml"
+        },
+        {
+          "ingredientName": "Coca-Cola",
+          "ingredientAmount": 100,
+          "ingredientMeasure": "ml"
+        },
+        {
+          "ingredientName": "lime",
+          "ingredientAmount": 1,
+          "ingredientMeasure": "slice"
+        }
+      ],
+      "steps": [
+        "Pour rum into the glass",
+        "Add coca-cola",
+        "Add lime slice"
+      ],
+      "recipeID": "bae3d0b0329"
     }
   ],
   "ingredients": [

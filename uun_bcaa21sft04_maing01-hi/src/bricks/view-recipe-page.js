@@ -29,11 +29,11 @@ export const ViewRecipePage = createVisualComponent({
       return;
     }
 
-    const [recipe, setRecipe] = useState({ loading: false, loaded: false });
+    const [recipe, setRecipe] = useState({ loading: false });
     useEffect(() => {
       const fetchData = async () => {
-        if (!recipe.loaded && !recipe.loading) {
-          setRecipe({ loading: true, loaded: false })
+        if (!recipe.loading && !recipe.data) {
+          setRecipe({ loading: true })
 
           const response = await fetch(`http://localhost:3001/api/recipe/${props.params.id}`)
           const data = await response.json()
@@ -42,7 +42,7 @@ export const ViewRecipePage = createVisualComponent({
             alert(data.error)
           } else {
 
-            setRecipe({ loading: false, loaded: true, data: data.value });
+            setRecipe({ loading: false, data: data.value });
           }
 
 
@@ -51,7 +51,7 @@ export const ViewRecipePage = createVisualComponent({
       fetchData();
     })
 
-    if (recipe.loading || !recipe.loaded) {
+    if (recipe.loading || !recipe.data) {
       return <UU5.Bricks.Loading />
     }
 

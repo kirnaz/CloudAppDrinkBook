@@ -156,7 +156,7 @@ async function findRecipes(req, res) {
     const foundRecipes = data.recipes.filter(recipe => {
 
         return (
-            (req.body.recipeName === undefined || recipe.recipeName.toLowerCase().includes(req.body.recipeName.toLowerCase())) &&
+            (req.body.recipeName === undefined || recipe.recipeName.toLowerCase().includes(req.body.recipeNameQuery.toLowerCase())) &&
             (req.body.timeForPreparationMax === undefined || req.body.timeForPreparationMax >= recipe.timeForPreparation) &&
             (req.body.category === undefined || req.body.category === recipe.category) &&
             (req.body.ingredientNames === undefined || recipe.listOfIngredients.filter(ingredient => {
