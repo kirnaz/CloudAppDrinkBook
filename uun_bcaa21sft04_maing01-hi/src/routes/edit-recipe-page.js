@@ -7,6 +7,7 @@ import EditRecipe from "../bricks/edit-recipe";
 import ReadRecipes from "../bricks/read-recipes";
 import ReadConfig from "../bricks/read-config";
 import ReadIngredients from "../bricks/read-ignredients";
+import SaveRecipe from "../bricks/save-recipe";
 //@@viewOff:imports
 
 const STATICS = {
@@ -52,7 +53,11 @@ export const ViewRecipePage = createVisualComponent({
       }
   
       return (
-        <EditRecipe recipe={recipe.data}/>
+        <ReadIngredients><ReadRecipes><ReadConfig><SaveRecipe>
+            {(ingredients,recipes,categories,createIngredient,createRecipe)=>{
+                return <EditRecipe recipe={recipe.data} ingredients={ingredients} categoryList={categories} recipeEdit={()=>{}} recipeDelete={()=>{}} ingredientSave={createIngredient}/>
+            }}
+            </SaveRecipe></ReadConfig></ReadRecipes></ReadIngredients>
       )
   },
 });

@@ -21,6 +21,7 @@ const About = UU5.Common.Component.lazy(() => import("../routes/about"));
 const ViewRecipePage = UU5.Common.Component.lazy(() => import("../routes/view-recipe-page"));
 const InitAppWorkspace = UU5.Common.Component.lazy(() => import("../routes/init-app-workspace"));
 const ControlPanel = UU5.Common.Component.lazy(() => import("../routes/control-panel"));
+const EditRecipePage = UU5.Common.Component.lazy(()=> import("../routes/edit-recipe-page"));
 
 const DEFAULT_USE_CASE = "home";
 const ROUTES = {
@@ -30,6 +31,7 @@ const ROUTES = {
   selectedRecipe: { component: <selectedRecipe /> },
   aboutRecipe: { component: <aboutRecipe /> },
   "view-recipe": { component: <ViewRecipePage /> },
+  "edit-recipe": { component: <EditRecipePage/> },
   "sys/uuAppWorkspace/initUve": { component: <InitAppWorkspace /> },
   controlPanel: { component: <ControlPanel /> }
 };
