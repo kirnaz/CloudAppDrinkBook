@@ -53,8 +53,8 @@ export const EditRecipePage = createVisualComponent({
       }
   
       return (
-        <ReadIngredients>{(ingredients)=>{
-        return (<ReadConfig>{(categories)=>{
+        <ReadIngredients>{({ingredients})=>{
+        return (<ReadConfig>{({categories})=>{
         return (<SaveRecipe>
             {(createIngredient,createRecipe)=>{
                 return <EditRecipe recipe={recipe.data} ingredients={ingredients/*[
