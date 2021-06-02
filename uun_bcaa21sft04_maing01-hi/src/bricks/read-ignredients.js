@@ -20,8 +20,6 @@ export const ReadIgnredients = createComponent({
     //@@viewOff:private
 
     //@@viewOn:hooks
-    const[error,setError]=useState(null)
-    const[isLoaded,setIsLoaded]=useState(false)
     //@@viewOff:hooks
 
     //@@viewOn:interface
@@ -29,7 +27,31 @@ export const ReadIgnredients = createComponent({
 
     //@@viewOn:render
 
-    let ingredients;
+    const [ingredients, setIngredients] = useState({ loading: false });
+    useEffect(() => {
+      const fetchData = async () => {
+        if (!ingredients.loading && !ingredients.data) {
+          setIngredients({ loading: true })
+
+          const response = await fetch(`http://localhost:3001/api/ingredients/list`)
+          const data = await response.json()
+
+          if (data.error) {
+            alert(data.error)
+          } else {
+
+            setIngredients({ loading: false, data: data.value });
+          }
+
+
+        }
+      }
+      fetchData();
+    })
+
+    return children({ ingredients: ingredients.data })
+
+    /*let ingredients;
     useEffect(() => {
       async function fetchData(){
 
@@ -58,7 +80,7 @@ export const ReadIgnredients = createComponent({
       fetchData();
     })
 
-    return children({ingredients})
+    return children({ingredients})*/
     /*const className = Config.Css.css``;
     const attrs = UU5.Common.VisualComponent.getAttrs(props, className);
     const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
