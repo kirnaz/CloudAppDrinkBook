@@ -22,11 +22,11 @@ export const SaveRecipe = createComponent({
   //@@viewOff:defaultProps
 //  const path = require("path"),
 //@fixme  const uuCookBook = require("??????");
-  let recipeSaved = new cookBookLibrary(path.join(__dirname, "..", "..", "storage", "recipes.json"))
+ 
 
-  
-
-  async function CreateAbl(req, res) {
+ 
+render({children}) {
+ async function createIngredient(req, res) {
     let {id, name} = req.body;
     if (
         name && typeof name === "string" && name.length < 30 &&
@@ -52,9 +52,10 @@ export const SaveRecipe = createComponent({
     }
 }
 
-module.exports = CreateAbl;
+
+
   
-  async function CreateAbl(req, res) {
+  async function createRecipe(req, res) {
     let {id, name, ingredientsList} = req.body;
     if (
         name && typeof name === "string" && name.length < 200 &&
@@ -91,9 +92,15 @@ module.exports = CreateAbl;
         })
     }
 }
-/*
-module.exports = CreateAbl;
- 
+
+
+    return children({createIngredient, createRecipe})},
+});
+
+export default SaveRecipe;
+
+
+/* 
   async function UpdateAbl(req, res) {
       let {id, name, ingredientsList} = req.body;
       if (
@@ -124,7 +131,7 @@ module.exports = CreateAbl;
   module.exports = SaveRecipe;
 */ 
  
-  render(props) {}
+  //render(props) {}
     //@@viewOn:private
     //@@viewOff:private
 
@@ -147,4 +154,4 @@ module.exports = CreateAbl;
 });
 
 export default SaveRecipe;
-/*
+*/
