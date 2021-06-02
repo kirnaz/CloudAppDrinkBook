@@ -3,6 +3,7 @@ const cors = require("cors");
 const dataStorage = require("./dataStorage");
 const { uid } = require("uid");
 const joi = require("joi");
+const shuffle = require('array-shuffle')
 
 const app = express();
 const port = 3001;
@@ -18,7 +19,8 @@ app.get("/api/recipes/list", listRecipes);
 app.post("/api/recipes/find", findRecipes);
 app.post("/api/ingredient/create", addIngredient);
 app.get("/api/ingredients/list", listIngredients);
-app.get("/api/categories",getCategories);
+app.get("/api/categories", getCategories);
+app.get("/api/recipes/random", getRandomRecipes);
 
 app.listen(port, () => {
     console.log(`on port ${port}`)
@@ -143,14 +145,14 @@ async function findRecipes(req, res) {
         "recipeNameQuery": joi.string().max(255),
         "timeForPreparationMax": joi.number(),
         "category": joi.number(),
-        "ingredientNames" : joi.array().max(3).items(joi.string())
+        "ingredientNames": joi.array().max(3).items(joi.string())
     })
 
     const { error } = schema.validate(req.body)
     if (error) {
         return res.json({ error: error.message })
     }
-    
+
     //name, timeforprep, category, ingredientsName
     const data = await dataStorage.load();
 
@@ -197,11 +199,17 @@ async function listIngredients(req, res) {
     res.json({ value: data.ingredients })
 }
 
-async function getCategories(req,res) {
+async function getCategories(req, res) {
     const data = await dataStorage.load();
     const categories = data.categories
 
-    res.json({value: categories})
+    res.json({ value: categories })
+}
 
-    
+async function getRandomRecipes(req, res) {
+    const data = await dataStorage.load();
+    const random = shuffle(data.recipes).slice(0, 4);
+
+    res.json({ value: random })
+
 }
