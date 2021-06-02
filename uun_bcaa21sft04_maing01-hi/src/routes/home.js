@@ -24,18 +24,18 @@ const heading = Config.Css.css`
   font-size: 20pt
 
 `
-const STATICS = {
-  //@@viewOn:statics
-  displayName: Config.TAG + "Home",
-  nestingLevel: "bigBoxCollection",
-  //@@viewOff:statics
-};
+  const STATICS = {
+    //@@viewOn:statics
+    displayName: Config.TAG + "Home",
+    nestingLevel: "bigBoxCollection",
+    //@@viewOff:statics
+  };
 
-export const Home = createVisualComponent({
-  ...STATICS,
+  export const Home = createVisualComponent({
+    ...STATICS,
 
 
-  render(props) {
+    render(props) {
 
 
     const [recipes, setRandomRecipes] = useState({ loading: false });
@@ -57,10 +57,15 @@ export const Home = createVisualComponent({
       }
       fetchData();
     })
-  
-    return (
+    const [hide, setHide] = useState(true)
+
+    function viewOrHide(){
+        
+        hide?setHide(false):setHide(true)
+    }
+    if (hide){return (
       <div>
-        <NavBar />
+        <NavBar onViewOrHide={viewOrHide} hide={hide}/>
         <UU5.Bricks.Heading className={heading}>Random Recipes</UU5.Bricks.Heading>
         <div className={buttons} >
           {recipes.data && recipes.data.map((recipe) => (
@@ -73,6 +78,15 @@ export const Home = createVisualComponent({
 
       </div>
     );
+  }else{
+    return(
+      <>
+      <NavBar onViewOrHide={viewOrHide} hide={hide}/>
+    <UU5.Bricks.Text hidden={hide}>sdkaljfhkljsadhflk</UU5.Bricks.Text>
+    <UU5.Bricks.Line colorSchema="default" hidden={hide}/>
+      </>
+    )
+  }
 
   },
 });
