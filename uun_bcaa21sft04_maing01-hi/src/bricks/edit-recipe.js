@@ -88,11 +88,11 @@ export const EditRecipe = createVisualComponent({
         <UU5.Bricks.Button onClick={recipeEdit}>Save</UU5.Bricks.Button>
 
         <UU5.Forms.Form>
-          <UU5.Forms.Text name="recipeName" value={recipe.name}>name</UU5.Forms.Text>
-          <UU5.Forms.Number name="timeForPreparation" value={recipe.timeForPreparation}>timeForPreparation</UU5.Forms.Number>
-          <UU5.Forms.Number name="numberOfPortions" value={recipe.numberOfPortions}>numberOfPortions</UU5.Forms.Number>
-          <UU5.Forms.SwitchSelector name="category" items={categoryList.map(category=>({category}))}>category</UU5.Forms.SwitchSelector>
-          <UU5.Bricks.Table name="listOfIngredients">ingredients
+          <UU5.Forms.Text name="recipeName" value={recipe.name} label="Name"/>
+          <UU5.Forms.Number name="timeForPreparation" value={recipe.timeForPreparation} min={1} label="Time fo preparation"/>
+          <UU5.Forms.Number name="numberOfPortions" value={recipe.numberOfPortions} min={1} label="Number of portions"/>
+          <UU5.Forms.SwitchSelector name="category" items={categoryList.map(category=>({category}))} label="Category"/>
+          <UU5.Bricks.Table name="listOfIngredients" label="Ingredients">
             {recipe.listOfIngredients.map((ingredient)=>{
             <UU5.Bricks.container>
               <label>ingredient</label>
@@ -100,14 +100,18 @@ export const EditRecipe = createVisualComponent({
               <datalist id='listid'>
                 {ingredients.map((ingredient)=>{<option label={ingredient.ingredientName} value={ingredient.ingredientID}/>})}
               </datalist>
-              <UU5.Forms.Number value={ingredient.ingredientAmount}>amount</UU5.Forms.Number>
-              <UU5.Bricks.Button>remove</UU5.Bricks.Button>
+              <UU5.Forms.Number value={ingredient.ingredientAmount} label="amount"/>
+              <UU5.Bricks.Button label="remove"/>
             </UU5.Bricks.container>
             })}
             <UU5.Bricks.Button>add</UU5.Bricks.Button>
           </UU5.Bricks.Table>
-          <UU5.Bricks.Table>{recipe.steps}
-            <UU5.Forms.Text>name</UU5.Forms.Text>
+          <UU5.Bricks.Table>{recipe.steps.map((step, index) => (
+                <UU5.Bricks.Table.Tr key={index}>
+                  <UU5.Bricks.Table.Td ><UU5.Forms.Text content={step}/></UU5.Bricks.Table.Td>
+                </UU5.Bricks.Table.Tr>
+              ))}
+            
           </UU5.Bricks.Table>
 
 

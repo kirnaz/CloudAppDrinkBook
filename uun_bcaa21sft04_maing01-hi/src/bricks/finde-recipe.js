@@ -57,23 +57,23 @@ export const FindeRecipe = createVisualComponent({
     return(
       <div>
         <UU5.Forms.Form>
-          <UU5.Bricks.Text></UU5.Bricks.Text>
-          <UU5.Forms.SwitchSelector items={categoryList.map(category=>({category}))}>category</UU5.Forms.SwitchSelector>
-          <UU5.Forms.Number>timeForPreparation</UU5.Forms.Number>
-          <UU5.Bricks.Table>ingredients
+          <UU5.Bricks.Text/>
+          <UU5.Forms.SwitchSelector items={categoryList.map(category=>({category}))} label="Category"/>
+          <UU5.Forms.Number label="Time for preparation"/>
+          <UU5.Bricks.Table label="ingredients">
             <UU5.Bricks.container>
               <label>ingredient</label>
               <input type='text' name="ingredient" value={ingredient.id} list='listid'/>
               <datalist id='listid'>
                 {ingredients.map((ingredient)=>{<option label={ingredient.ingredientName} value={ingredient.ingredientID}/>})}
               </datalist>
-              <UU5.Forms.Number value={ingredient.ingredientAmount}>amount</UU5.Forms.Number>
-              <UU5.Bricks.Button>remove</UU5.Bricks.Button>
+              <UU5.Forms.Number value={ingredient.ingredientAmount} label="amount"/>
+              <UU5.Bricks.Button label="remove"/>
             </UU5.Bricks.container>
-            <UU5.Bricks.Button>add</UU5.Bricks.Button>
+            <UU5.Bricks.Button label="add"/>
           </UU5.Bricks.Table>
 
-          <UU5.Bricks.Button onClick={recipeFind}>Send</UU5.Bricks.Button>
+          <UU5.Bricks.Button onClick={recipeFind} label="send"/>
         </UU5.Forms.Form>
       </div>
     )
