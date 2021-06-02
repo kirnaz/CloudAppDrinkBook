@@ -1,6 +1,6 @@
 //@@viewOn:imports
 import UU5 from "uu5g04";
-import { createComponent } from "uu5g04-hooks";
+import { createComponent,useEffect,useState } from "uu5g04-hooks";
 import Config from "./config/config";
 //@@viewOff:imports
 
@@ -19,23 +19,44 @@ export const ReadIgnredients = createComponent({
     //@@viewOn:private
     //@@viewOff:private
 
+    //@@viewOn:hooks
+    const[error,setError]=useState(null)
+    const[isLoaded,setIsLoaded]=useState(false)
+    //@@viewOff:hooks
+
     //@@viewOn:interface
     //@@viewOff:interface
 
     //@@viewOn:render
-    //async function fetchData(){
-      let ingredients=fetch("http://localhost:3001/api/ingredients/list", {
-        "method": "GET",
-        "headers": {}
-      })
-      .then(response => {
-        console.log(response);
-      })
-      .catch(err => {
-        console.error(err);
-      });
-    /*}
-    fetchData();*/
+
+    let ingredients;
+    useEffect(() => {
+      async function fetchData(){
+
+          const response = await fetch("http://localhost:3001/api/ingredients/list", {
+            "method": "GET",
+            "headers": {}
+          })
+          .then(response => {
+            console.log("response"+response);
+          })
+          .catch(err => {
+            console.error(err);
+          });
+          const data = await response.json()
+          setIsLoaded(true);
+
+          if (data.error) {
+            alert(data.error)
+          } else {
+            ingredients=data.itemList;
+            console.table(itemList);
+            //ingredients=data.value;
+          }
+
+      }
+      fetchData();
+    })
 
     return children({ingredients})
     /*const className = Config.Css.css``;
