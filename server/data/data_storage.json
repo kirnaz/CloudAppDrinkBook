@@ -87,6 +87,51 @@
         "add 2 cubes of frozen cream and a spoon of chocolate"
       ],
       "recipeID": "0649f7a197e"
+    },
+    {
+      "recipeName": "Bloody Mary",
+      "numberOfPortions": 8,
+      "timeForPreparation": 20,
+      "category": 1,
+      "listOfIngredients": [
+        {
+          "ingredientName": "Tomato juice",
+          "ingredientAmount": 1.5,
+          "ingredientMeasure": "l"
+        },
+        {
+          "ingredientName": "Worcestershire sauce",
+          "ingredientAmount": 3,
+          "ingredientMeasure": "tablespoons"
+        },
+        {
+          "ingredientName": "Lime",
+          "ingredientAmount": 1,
+          "ingredientMeasure": "pice"
+        },
+        {
+          "ingredientName": "Salt",
+          "ingredientAmount": 3,
+          "ingredientMeasure": "teaspoons"
+        },
+        {
+          "ingredientName": "Pepper grounded",
+          "ingredientAmount": 1,
+          "ingredientMeasure": "to taste"
+        },
+        {
+          "ingredientName": "Vodka",
+          "ingredientAmount": 480,
+          "ingredientMeasure": "ml"
+        }
+      ],
+      "steps": [
+        "Mix tomato juice, Worcestershire sauce, lime juice, salt, pepper and vodka. ",
+        "Stir",
+        "Put ice into the glass",
+        "Enjoy!"
+      ],
+      "recipeID": "ff374ea845a"
     }
   ],
   "ingredients": [

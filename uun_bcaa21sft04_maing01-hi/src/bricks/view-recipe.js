@@ -2,6 +2,7 @@
 import UU5 from "uu5g04";
 import { createVisualComponent, useState, useEffect } from "uu5g04-hooks";
 import Config from "./config/config";
+import NavBar from "./navbar"
 //@@viewOff:imports
 const main = Config.Css.css`
   border-radius: 4px;
@@ -87,6 +88,7 @@ export const ViewRecipe = createVisualComponent({
 
     return currentNestingLevel ? (
       <div {...attrs}>
+        <NavBar />
         <div className={firstRow}>
 
           <UU5.Bricks.Label content="Ingredients for" />

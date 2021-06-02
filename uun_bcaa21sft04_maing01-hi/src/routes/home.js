@@ -2,12 +2,27 @@
 import UU5 from "uu5g04";
 import { createVisualComponent, useState, useEffect } from "uu5g04-hooks";
 import Config from "./config/config";
+import NavBar from "../bricks/navbar"
 //@@viewOff:imports
-const main = Config.Css.css`
+const button = Config.Css.css`
+  padding: 32px;  
+  font-size: 18pt;
+  width: 400px;
+  margin: 32px;
+`
+const buttons = Config.Css.css`
   display: flex;
   align-items: center;
-  padding: 32px 0;  
-  justify-content: flex-end;
+  padding: 32px 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+`
+
+const heading = Config.Css.css`
+  padding : 32px;
+  text-align: center;
+  font-size: 20pt
+
 `
 const STATICS = {
   //@@viewOn:statics
@@ -19,17 +34,9 @@ const STATICS = {
 export const Home = createVisualComponent({
   ...STATICS,
 
-  //@@viewOn:propTypes
-  propTypes: {},
-  //@@viewOff:propTypes
-
-  //@@viewOn:defaultProps
-  defaultProps: {},
-  //@@viewOff:defaultProps
 
   render(props) {
-    //@@viewOn:private
-    //@@viewOff:private
+
 
     const [recipes, setRandomRecipes] = useState({ loading: false });
     useEffect(() => {
@@ -46,26 +53,27 @@ export const Home = createVisualComponent({
 
             setRandomRecipes({ loading: false, data: data.value });
           }
-
-
         }
       }
       fetchData();
     })
-    //@@viewOn:interface
-    //@@viewOff:interface
-
-    //@@viewOn:render
+  
     return (
       <div>
-        {recipes.data && recipes.data.map((recipe) => (
-          <button className={main} onClick={() => {
-            UU5.Environment.getRouter().setRoute("view-recipe", { id: recipe.recipeID })
-          }}>{recipe.recipeName}</button>
-        ))}
+        <NavBar />
+        <UU5.Bricks.Heading className={heading}>Random Recipes</UU5.Bricks.Heading>
+        <div className={buttons}>
+          {recipes.data && recipes.data.map((recipe) => (
+            <button className={button} onClick={() => {
+              UU5.Environment.getRouter().setRoute("view-recipe", { id: recipe.recipeID })
+            }}>{recipe.recipeName}</button>
+          ))}
+        </div>
+
+
       </div>
     );
-    //@@viewOff:render
+
   },
 });
 

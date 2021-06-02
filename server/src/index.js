@@ -208,7 +208,7 @@ async function getCategories(req, res) {
 
 async function getRandomRecipes(req, res) {
     const data = await dataStorage.load();
-    const random = shuffle(data.recipes).slice(0, 4);
+    const random = shuffle(data.recipes).slice(0, 5);
 
     res.json({ value: random })
 
