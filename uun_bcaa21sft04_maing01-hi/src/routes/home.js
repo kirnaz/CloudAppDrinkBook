@@ -62,9 +62,9 @@ export const Home = createVisualComponent({
       <div>
         <NavBar />
         <UU5.Bricks.Heading className={heading}>Random Recipes</UU5.Bricks.Heading>
-        <div className={buttons}>
+        <div className={buttons} >
           {recipes.data && recipes.data.map((recipe) => (
-            <button className={button} onClick={() => {
+            <button className={button} key={recipe.recipeID} onClick={() => {
               UU5.Environment.getRouter().setRoute("view-recipe", { id: recipe.recipeID })
             }}>{recipe.recipeName}</button>
           ))}
