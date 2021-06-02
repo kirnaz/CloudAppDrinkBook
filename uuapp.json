@@ -208,6 +208,21 @@
         "imageUri": "",
         "uuEccReady": false,
         "template": "<UunBcaa21sft04.Bricks.Neco />"
+      },
+      {
+        "code": "UunBcaa21sft04.Bricks.Homepage",
+        "name": "Homepage",
+        "tagList": [
+          "UunBcaa21sft04",
+          "Bricks",
+          "Homepage"
+        ],
+        "docCode": "UunBcaa21sft04BricksHomepage",
+        "desc": "",
+        "icon": "",
+        "imageUri": "",
+        "uuEccReady": false,
+        "template": "<UunBcaa21sft04.Bricks.Homepage />"
       }
     ]
   },
