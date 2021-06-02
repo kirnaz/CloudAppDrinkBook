@@ -101,7 +101,7 @@ export const EditRecipe = createVisualComponent({
                 {ingredients.map((ingredient)=>{<option label={ingredient.ingredientName} value={ingredient.ingredientID}/>})}
               </datalist>
               <UU5.Forms.Number value={ingredient.ingredientAmount} label="amount"/>
-              <UU5.Bricks.Button label="remove"/>
+              <UU5.Bricks.Button>remove</UU5.Bricks.Button>
             </UU5.Bricks.container>
             })}
             <UU5.Bricks.Button>add</UU5.Bricks.Button>

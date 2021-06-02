@@ -87,7 +87,9 @@ export const AddRecipe = createVisualComponent({
             <UU5.Bricks.Button>add</UU5.Bricks.Button>
           </UU5.Bricks.Table>
           <UU5.Bricks.Table>steps
-            <UU5.Forms.Text>name</UU5.Forms.Text>
+                <UU5.Bricks.Table.Tr>
+                  <UU5.Bricks.Table.Td><UU5.Forms.Text>name</UU5.Forms.Text></UU5.Bricks.Table.Td>
+                </UU5.Bricks.Table.Tr>
           </UU5.Bricks.Table>
 
           <UU5.Bricks.Button onClick={saveRecipe}>Send</UU5.Bricks.Button>
