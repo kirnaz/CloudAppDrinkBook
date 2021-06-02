@@ -13,15 +13,9 @@ const STATICS = {
 export const ReadIgnredients = createComponent({
   ...STATICS,
 
-  //@@viewOn:propTypes
-  propTypes: {},
-  //@@viewOff:propTypes
 
-  //@@viewOn:defaultProps
-  defaultProps: {},
-  //@@viewOff:defaultProps
 
-  render(props) {
+  render({children}) {
     //@@viewOn:private
     //@@viewOff:private
 
@@ -29,7 +23,22 @@ export const ReadIgnredients = createComponent({
     //@@viewOff:interface
 
     //@@viewOn:render
-    const className = Config.Css.css``;
+    //async function fetchData(){
+      let ingredients=fetch("http://localhost:3001/api/ingredients/list", {
+        "method": "GET",
+        "headers": {}
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(err => {
+        console.error(err);
+      });
+    /*}
+    fetchData();*/
+
+    return children({ingredients})
+    /*const className = Config.Css.css``;
     const attrs = UU5.Common.VisualComponent.getAttrs(props, className);
     const currentNestingLevel = UU5.Utils.NestingLevel.getNestingLevel(props, STATICS);
 
@@ -38,7 +47,7 @@ export const ReadIgnredients = createComponent({
         <div>Component {STATICS.displayName}</div>
         {UU5.Utils.Content.getChildren(props.children, props, STATICS)}
       </div>
-    ) : null;
+    ) : null;*/
     //@@viewOff:render
   },
 });

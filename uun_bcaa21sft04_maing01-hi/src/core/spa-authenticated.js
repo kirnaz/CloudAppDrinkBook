@@ -19,8 +19,8 @@ const STATICS = {
   //@@viewOff:statics
 };
 
-const About = UU5.Common.Component.lazy(() => import("../bricks/about"));
-const ViewRecipePage = UU5.Common.Component.lazy(() => import("../bricks/view-recipe-page"));
+const About = UU5.Common.Component.lazy(() => import("../routes/about"));
+const ViewRecipePage = UU5.Common.Component.lazy(() => import("../routes/view-recipe-page"));
 const InitAppWorkspace = UU5.Common.Component.lazy(() => import("../routes/init-app-workspace"));
 const ControlPanel = UU5.Common.Component.lazy(() => import("../routes/control-panel"));
 
