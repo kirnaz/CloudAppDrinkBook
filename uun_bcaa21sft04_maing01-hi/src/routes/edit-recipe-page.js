@@ -12,12 +12,12 @@ import SaveRecipe from "../bricks/save-recipe";
 
 const STATICS = {
   //@@viewOn:statics
-  displayName: Config.TAG + "EditRecipe",
+  displayName: Config.TAG + "EditRecipePage",
   nestingLevel: "bigBoxCollection",
   //@@viewOff:statics
 };
 
-export const ViewRecipePage = createVisualComponent({
+export const EditRecipePage = createVisualComponent({
   ...STATICS,
 
 
@@ -53,11 +53,13 @@ export const ViewRecipePage = createVisualComponent({
       }
   
       return (
-        <ReadIngredients><ReadRecipes><ReadConfig><SaveRecipe>
-            {(ingredients,recipes,categories,createIngredient,createRecipe)=>{
-                return <EditRecipe recipe={recipe.data} ingredients={ingredients} categoryList={categories} recipeEdit={()=>{}} recipeDelete={()=>{}} ingredientSave={createIngredient}/>
+        <ReadIngredients>{(ingredients)=>{
+        return (<ReadConfig>{(categories)=>{
+        return (<SaveRecipe>
+            {(createIngredient,createRecipe)=>{
+                return <EditRecipe recipe={recipe.data} ingredients={ingredients} categories={categories} recipeEdit={()=>{}} recipeDelete={()=>{}} ingredientSave={createIngredient}/>
             }}
-            </SaveRecipe></ReadConfig></ReadRecipes></ReadIngredients>
+            </SaveRecipe>)}}</ReadConfig>)}}</ReadIngredients>
       )
   },
 });
