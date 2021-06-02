@@ -31,7 +31,7 @@ const ROUTES = {
   selectedRecipe: { component: <selectedRecipe /> },
   aboutRecipe: { component: <aboutRecipe /> },
   "view-recipe": { component: <ViewRecipePage /> },
-  "edit-recipe": { component: <EditRecipePage/> },
+  //"edit-recipe": { component: <EditRecipePage/> },
   "sys/uuAppWorkspace/initUve": { component: <InitAppWorkspace /> },
   controlPanel: { component: <ControlPanel /> }
 };
