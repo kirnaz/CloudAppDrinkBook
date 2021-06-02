@@ -20,11 +20,81 @@ export const SaveRecipe = createComponent({
   //@@viewOn:defaultProps
   defaultProps: {},
   //@@viewOff:defaultProps
-  const path = require("path"),
+//  const path = require("path"),
 //@fixme  const uuCookBook = require("??????");
   let recipeSaved = new cookBookLibrary(path.join(__dirname, "..", "..", "storage", "recipes.json"))
+
   
-  async function UpdateLib(req, res) {
+
+  async function CreateAbl(req, res) {
+    let {id, name} = req.body;
+    if (
+        name && typeof name === "string" && name.length < 30 &&
+        id && typeof id === "string" && id.length < 25
+    ) {
+        const ingredients = {id, name, approved: false};
+        try {
+            let result = await dao.addIngredients(ingredients);
+            res.status(200).json(result);
+        } catch (e) {
+            if (e.code === "DUPLICATE_CODE") {
+                res.status(400).json({error: e})
+            } else if (e.code === "FAILED_TO_STORE_INGREDIENTS") {
+                res.status(500).json({error: e})
+            } else {
+                res.status(500).json({error: e})
+            }
+        }
+    } else {
+        res.status(400).json({
+            "error": "Invalid dtoIn"
+        })
+    }
+}
+
+module.exports = CreateAbl;
+  
+  async function CreateAbl(req, res) {
+    let {id, name, ingredientsList} = req.body;
+    if (
+        name && typeof name === "string" && name.length < 200 &&
+        ingredientsList && ingredientsList.length > 0 && ingredientsList.length < 10 &&
+        id && typeof id === "string" && id.length < 25
+    ) {
+        for (let i = 0; i< ingredientsList.length; i++) {
+            try {
+                await ingredientsDao.getingredients(ingredientsList[i])
+            } catch (e) {
+                if (e.code === "FAILED_TO_GET_INGREDIENTS") {
+                    res.status(400).json({error: e})
+                } else {
+                    res.status(500).json({error: e})
+                }
+            }
+        }
+        const recipe = {id, name, ingredientsList};
+        try {
+            let result = await dao.addrecipe(book);
+            res.status(200).json(result);
+        } catch (e) {
+            if (e.code === "DUPLICATE_CODE") {
+                res.status(400).json({error: e})
+            } else if (e.code === "FAILED_TO_STORE_RECIPE") {
+                res.status(500).json({error: e})
+            } else {
+                res.status(500).json({error: e})
+            }
+        }
+    } else {
+        res.status(400).json({
+            "error": "Invalid dtoIn"
+        })
+    }
+}
+/*
+module.exports = CreateAbl;
+ 
+  async function UpdateAbl(req, res) {
       let {id, name, ingredientsList} = req.body;
       if (
           (id && typeof id === "string" && id.length < 25) &&
@@ -52,9 +122,9 @@ export const SaveRecipe = createComponent({
   }
   
   module.exports = SaveRecipe;
+*/ 
  
- 
-  render(props) {
+  render(props) {}
     //@@viewOn:private
     //@@viewOff:private
 
