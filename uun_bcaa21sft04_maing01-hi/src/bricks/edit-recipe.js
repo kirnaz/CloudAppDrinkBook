@@ -69,12 +69,6 @@ export const EditRecipe = createVisualComponent({
     const [steps, setSteps] = useState(recipe.steps);
     const [result, setResult] = useState(recipe.steps);
 
-    function _addLine(){
-      console.log("line+");
-      recipe.steps=[...recipe.steps,""];
-      setRecipee(recipe)
-      //render( recipe, ingredients, categoryList, recipeEdit, recipeDelete, ingredientSave );
-    }
 
     console.log(recipe);
     console.log(ingredients);
@@ -123,7 +117,7 @@ export const EditRecipe = createVisualComponent({
           </UU5.Bricks.Table>
           <UU5.Bricks.Table>
             <UU5.Bricks.Table.TBody>
-              {recipe.steps.map((step, index) => (
+              {steps.map((step, index) => (
                 <UU5.Bricks.Table.Tr key={index}>
                   <UU5.Bricks.Table.Td><UU5.Forms.Text value={step} name={"step" + index} onBlur={(value) => _onChangeLine(value.value, index)}required/></UU5.Bricks.Table.Td>
                   <UU5.Bricks.Button onClick={_removeLine}>Remove</UU5.Bricks.Button>
