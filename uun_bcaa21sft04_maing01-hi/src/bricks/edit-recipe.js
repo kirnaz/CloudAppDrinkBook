@@ -77,8 +77,12 @@ export const EditRecipe = createVisualComponent({
       recipeEdit(opt.values);
     }
 
-    //if(!recipe || !ingredinets || !categoryList) return null;
+    if(!recipe || !ingredients || !categoryList) return <h1>Error</h1>
     
+    console.log(recipe);
+    console.log(ingredients);
+    console.log(categoryList);
+
     return(
       <div>
         <UU5.Bricks.Header>
@@ -91,14 +95,15 @@ export const EditRecipe = createVisualComponent({
           <UU5.Forms.Text name="recipeName" value={recipe.recipeName} label="Name"/>
           <UU5.Forms.Number name="timeForPreparation" value={recipe.timeForPreparation} min={1} label="Time fo preparation"/>
           <UU5.Forms.Number name="numberOfPortions" value={recipe.numberOfPortions} min={1} label="Number of portions"/>
-          {/*<UU5.Forms.SwitchSelector name="category" items={categoryList.map((category)=>{return category})} label="Category"/>*/}
+          <UU5.Forms.SwitchSelector name="category" items={categoryList.map(value=>({value}))} label="Category" /*value={} onChange={({ value }) => this.setState({ size: value })}*//>
           <UU5.Bricks.Table name="listOfIngredients" label="Ingredients">
             {recipe.listOfIngredients.map((ingredient)=>{
             <UU5.Bricks.container>
+              123
               <label>ingredient</label>
               <input type='text' name="ingredient" value={ingredient.id} list='listid'/>
               <datalist id='listid'>
-                {/*ingredients.map((ingredient)=>{<option label={ingredient.ingredientName} value={ingredient.ingredientID}/>})*/}
+                {ingredients.map((ingredient)=>{<option label={ingredient.ingredientName} value={ingredient.ingredientID}/>})}
               </datalist>
               <UU5.Forms.Number value={ingredient.ingredientAmount} label="amount"/>
               <UU5.Bricks.Button>remove</UU5.Bricks.Button>

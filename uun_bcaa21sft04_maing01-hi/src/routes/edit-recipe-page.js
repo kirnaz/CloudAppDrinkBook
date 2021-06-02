@@ -57,7 +57,9 @@ export const EditRecipePage = createVisualComponent({
         return (<ReadConfig>{(categories)=>{
         return (<SaveRecipe>
             {(createIngredient,createRecipe)=>{
-                return <EditRecipe recipe={recipe.data} ingredients={ingredients} categories={categories} recipeEdit={()=>{}} recipeDelete={()=>{}} ingredientSave={createIngredient}/>
+                return <EditRecipe recipe={recipe.data} ingredients={ingredients/*[
+                {"ingredientName": "Gin","ingredientID": "404e9c1e274"},{"ingredientName": "Tonic water","ingredientID": "dc31b891717"}]*/}
+                     categoryList={["a","b","c"]} recipeEdit={()=>{}} recipeDelete={()=>{}} ingredientSave={createIngredient}/>
             }}
             </SaveRecipe>)}}</ReadConfig>)}}</ReadIngredients>
       )
