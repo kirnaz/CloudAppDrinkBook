@@ -82,7 +82,7 @@ const heading = Config.Css.css`
     return(
       <>
       <NavBar onViewOrHide={viewOrHide} hide={hide}/>
-    <UU5.Bricks.Text hidden={hide}>sdkaljfhkljsadhflk</UU5.Bricks.Text>
+    <UU5.Bricks.Header colorSchema="blue" hidden={hide}>Here will be search component.</UU5.Bricks.Header>
     <UU5.Bricks.Line colorSchema="default" hidden={hide}/>
       </>
     )
