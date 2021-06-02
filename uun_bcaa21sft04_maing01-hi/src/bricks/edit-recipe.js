@@ -63,6 +63,8 @@ export const EditRecipe = createVisualComponent({
       }
     }
     function _onChangeLine(value, index) {
+      steps[index] = value;
+      setSteps(steps);
       setResult(JSON.stringify(steps));
     }
 
