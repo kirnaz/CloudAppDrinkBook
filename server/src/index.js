@@ -18,6 +18,7 @@ app.get("/api/recipes/list", listRecipes);
 app.post("/api/recipes/find", findRecipes);
 app.post("/api/ingredient/create", addIngredient);
 app.get("/api/ingredients/list", listIngredients);
+app.get("/api/categories",getCategories);
 
 app.listen(port, () => {
     console.log(`on port ${port}`)
@@ -196,3 +197,11 @@ async function listIngredients(req, res) {
     res.json({ value: data.ingredients })
 }
 
+async function getCategories(req,res) {
+    const data = await dataStorage.load();
+    const categories = data.categories
+
+    res.json({value: categories})
+
+    
+}

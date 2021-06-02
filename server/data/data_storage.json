@@ -51,6 +51,42 @@
         "Add lime slice"
       ],
       "recipeID": "bae3d0b0329"
+    },
+    {
+      "recipeName": "Frozen Irish Coffee",
+      "numberOfPortions": 2,
+      "timeForPreparation": 20,
+      "category": 3,
+      "listOfIngredients": [
+        {
+          "ingredientName": "Strong black coffee",
+          "ingredientAmount": 470,
+          "ingredientMeasure": "g"
+        },
+        {
+          "ingredientName": "Sweetened cream",
+          "ingredientAmount": 355,
+          "ingredientMeasure": "ml"
+        },
+        {
+          "ingredientName": "Irish whiskey",
+          "ingredientAmount": 90,
+          "ingredientMeasure": "ml"
+        },
+        {
+          "ingredientName": "Melted chocolate",
+          "ingredientAmount": 1,
+          "ingredientMeasure": "bar"
+        }
+      ],
+      "steps": [
+        "Pour coffee into ice molds and freeze",
+        "Pour sweetened cream into ice molds and freeze",
+        "Whip the remaining cream",
+        "Take 4 cubes of frozen coffee, place in a blender, add whiskey and blend",
+        "add 2 cubes of frozen cream and a spoon of chocolate"
+      ],
+      "recipeID": "0649f7a197e"
     }
   ],
   "ingredients": [
@@ -61,6 +97,20 @@
     {
       "ingredientName": "Tonic water",
       "ingredientID": "dc31b891717"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Alcoholic"
+    },
+    {
+      "id": 2,
+      "name": "Non-alcoholic"
+    },
+    {
+      "id": 3,
+      "name": "Coffee"
     }
   ]
 }
